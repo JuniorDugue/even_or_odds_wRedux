@@ -1,14 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {createStore} from "redux"; 
+import { createStore } from "redux";
 import "./styles.css";
 
+const DEFAULT_SETTINGS = {
+  gameStarted: false,
+  instructionsExpanded: false
+}
+
 const rootReudcer = () => {
-  return {foo: "bar"}
+  return DEFAULT_SETTINGS;
 };
 
-  const store = createStore(rootReudcer);
-  console.log("store", store);
+const store = createStore(rootReudcer);
+
+console.log("store.getState()", store.getState());
+console.log("store", store);
 
 function App() {
   return (
