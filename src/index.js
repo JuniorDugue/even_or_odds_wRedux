@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import {createStore} from "redux"; 
 import "./styles.css";
+
+const rootReudcer = () => {
+  return {foo: "bar"}
+};
+
+  const store = createStore(rootReudcer);
+  console.log("store", store);
 
 function App() {
   return (
@@ -11,6 +18,8 @@ function App() {
     </div>
   );
 }
+
+
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
